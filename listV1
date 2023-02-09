@@ -1,0 +1,29 @@
+"""
+Faça uma lista de compras com listas. 
+O usuario deve ter a possibilidade de INSERIR, APAGAR e Listar valores da sua lista.
+Não permita que o programa quebra com erros de indices inexistentes na lista
+"""
+lista = []
+while True:
+    print("Selecione um opção: ")
+    escolha = ''
+    escolha = input("[i]nserir [a]pagar [l]istar: ")
+
+    if escolha.lower() == "i":
+        inserir = input("Oq deseja inserir? ")
+        if escolha == 'i' and inserir == '':
+            print('Comando invalido:')
+            continue
+        else:
+            lista.append(inserir)
+
+    elif escolha.lower() == "a":
+        apagar = input("Escolha um indice para apagar: ")
+        lista.pop(int(apagar))
+
+    elif escolha.lower() == "l":
+        for item in enumerate(lista):
+            a, b = item
+            print(a, b)
+    else:
+        print("Comando invalido!")
